@@ -14,6 +14,14 @@ app.get("/apple", (req, res) => {
           res.send("This is the response from the apple endpoint");
 });
 
+app.post("/mobile", (req, res) => {
+          const { name, price } = req.body;
+          res.json({
+                    name: name,
+                    price: price
+          });
+});
+
 const userNamespace = io.of('/user');
 userNamespace.on("connection", (socket) => {
           console.log("namespace user connected");

@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
           res.send('Hello World!');
 });
 
+app.get("/apple", (req, res) => {
+          res.send("This is the response from the apple endpoint");
+});
+
 const userNamespace = io.of('/user');
 userNamespace.on("connection", (socket) => {
           console.log("namespace user connected");
